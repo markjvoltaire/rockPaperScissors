@@ -24,6 +24,7 @@ let draws = 0;
 playButton.addEventListener('click', ()=>{
   const userThrow = document.querySelector('input[type=radio]:checked').value
   console.log(userThrow)
+  console.log(getRandomNumber())
   
 
 

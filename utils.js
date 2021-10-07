@@ -1,5 +1,5 @@
 export function getRandomNumber() {
-   return ['rock', 'paper', 'scissor'] [Math.ceil(Math.random() * 3)];
+   return ['rock', 'paper', 'scissor'] [Math.floor(Math.random() * 3)];
 }
 
 
