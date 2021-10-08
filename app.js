@@ -3,7 +3,7 @@
 //const rockShoot = document.getElementById('rock')
 //const paperShoot = document.getElementById('paper')
 
-import { getRandomNumber } from "./utils.js"
+import { getRandomNumber, didPlayerWin } from "./utils.js"
 
 //const scissorsShoot = document.getElementById('scissors')
 const playButton = document.getElementById('playButton')
@@ -16,24 +16,31 @@ const gamePick = document.getElementById('gamePick')
 // initialize global state
 let wins = 0;
 let loses = 0;
-let draws = 0;
+let ties = 0;
 
 
 // set event listeners 
 
 playButton.addEventListener('click', ()=>{
-  const userThrow = document.querySelector('input[type=radio]:checked').value
-  console.log(userThrow)
-  console.log(getRandomNumber())
-  
+  const userThrow = document.querySelector('input[type=radio]:checked');
+  const playerChoice = userThrow.value 
+  const computerChoice = getRandomNumber();
 
+  if (playerChoice === computerChoice){
+      ties++
+  } else if (didPlayerWin(playerChoice, computerChoice) === 'wins'){
+      wins++;
+  } else {
+      loses++;  
+  } ;
+  console.log(playerChoice);
+  console.log(computerChoice);
+  console.log(didPlayerWin());
 
+ //winCounter.textContent = wins;
+  //lossCounter.textContent = loses;
+  //tieCounter.textContent = ties;
   
-  
-  
-
-  
-
 })
     
   
