@@ -22,7 +22,7 @@ let ties = 0;
 // set event listeners 
 
 playButton.addEventListener('click', ()=>{
-  const userThrow = document.querySelector('input[type=radio]:checked').value
+  const userThrow = document.querySelector('input[type=radio]:checked');
   const playerChoice = userThrow.value 
   const computerChoice = getRandomNumber();
 
@@ -32,11 +32,14 @@ playButton.addEventListener('click', ()=>{
       wins++;
   } else {
       loses++;  
-  } 
+  } ;
+  console.log(playerChoice);
+  console.log(computerChoice);
+  console.log(didPlayerWin());
 
-  winCounter.textContent = wins;
-  lossCounter.textContent = loses;
-  tieCounter.textContent = ties;
+ //winCounter.textContent = wins;
+  //lossCounter.textContent = loses;
+  //tieCounter.textContent = ties;
   
 })
     
