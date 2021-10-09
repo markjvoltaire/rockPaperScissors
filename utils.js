@@ -1,23 +1,22 @@
 export function getRandomNumber() {
-   return ['rock', 'paper', 'scissor'] [(Math.floor(Math.random() * 3))];
+   return ['rock', 'paper', 'scissors'] [(Math.floor(Math.random() * 3))];
 
 }
 
 export function didPlayerWin(playerChoice, computerChoice){
-
-   if (playerChoice === computerChoice){
+   if (playerChoice === computerChoice) {
       return 'ties';
-   } else if(playerChoice === 'paper' && computerChoice === 'scissors'){
+   } else if (playerChoice === 'paper' && computerChoice === 'scissors') {
       return 'loses';
-   }  else if (playerChoice === 'scissors' && computerChoice === 'rock'){
+   }  else if (playerChoice === 'scissors' && computerChoice === 'rock') {
       return 'loses'
-   } else if(playerChoice === 'rock' && computerChoice === 'paper'){
+   } else if (playerChoice === 'rock' && computerChoice === 'paper') {
       return 'loses'
-   } else if(playerChoice === 'paper' && computerChoice === 'rock'){
+   } else if (playerChoice === 'paper' && computerChoice === 'rock') {
       return 'wins';
-   }  else if (playerChoice === 'scissors' && computerChoice === 'paper'){
+   }  else if (playerChoice === 'scissors' && computerChoice === 'paper') {
       return 'wins'
-   } else if(playerChoice === 'rock' && computerChoice === 'scissors'){
+   } else if (playerChoice === 'rock' && computerChoice === 'scissors' ){
       return 'wins'
    }
 }
