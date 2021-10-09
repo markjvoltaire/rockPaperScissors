@@ -7,10 +7,9 @@ import { getRandomNumber, didPlayerWin } from "./utils.js"
 
 //const scissorsShoot = document.getElementById('scissors')
 const playButton = document.getElementById('playButton')
-const myPick = document.getElementById('myPick')
-const cpuPick= document.getElementById('cpuPick')
-const gamePick = document.getElementById('gamePick')
-
+const winCounter = document.getElementById('wincount');
+const lossCounter = document.getElementById('losscount');
+const tieCounter = document.getElementById('ties');
 
 
 // initialize global state
@@ -22,26 +21,23 @@ let ties = 0;
 // set event listeners 
 
 playButton.addEventListener('click', ()=>{
-  const userThrow = document.querySelector('input[type=radio]:checked');
-  const playerChoice = userThrow.value 
+  const userThrow = document.querySelector('input[type=radio]:checked')
+  const playerChoice = userThrow.value; 
   const computerChoice = getRandomNumber();
 
   if (playerChoice === computerChoice){
-      ties++
+      ties++;
   } else if (didPlayerWin(playerChoice, computerChoice) === 'wins'){
       wins++;
   } else {
       loses++;  
   } ;
-  console.log(playerChoice);
-  console.log(computerChoice);
-  console.log(didPlayerWin());
-
- //winCounter.textContent = wins;
-  //lossCounter.textContent = loses;
-  //tieCounter.textContent = ties;
-  
+  winCounter.textContent = wins;
+  lossCounter.textContent = loses;
+  tieCounter.textContent = ties;
 })
+  
+
     
   
 
